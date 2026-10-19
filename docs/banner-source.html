@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; padding: 0; }
+  body {
+    width: 1280px; height: 640px; overflow: hidden;
+    font-family: "Segoe UI", "Segoe UI Variable", Arial, sans-serif;
+    background: #0A0D0B; color: #fff; position: relative;
+  }
+  .glow {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(600px 400px at 85% 30%, rgba(25,211,42,.16), transparent 70%),
+      radial-gradient(500px 360px at 10% 100%, rgba(46,125,50,.25), transparent 70%);
+  }
+  .grid {
+    position: absolute; inset: 0; opacity: .07;
+    background-image: linear-gradient(#19D32A 1px, transparent 1px), linear-gradient(90deg, #19D32A 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .left { position: absolute; left: 80px; top: 60px; width: 700px; }
+  .icon { width: 104px; height: 104px; border-radius: 26px; background: #2E7D32; box-shadow: 0 0 0 1px rgba(25,211,42,.35), 0 0 40px rgba(25,211,42,.25); }
+  h1 { font-size: 76px; line-height: 1; margin: 28px 0 16px; font-weight: 800; letter-spacing: -1.5px; }
+  .sub { font-size: 28px; line-height: 1.35; color: #C9D4CB; margin: 0 0 28px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 12px; }
+  .chip { font-size: 20px; padding: 8px 16px; border-radius: 999px; border: 1.5px solid rgba(25,211,42,.55); color: #E6F7E8; background: rgba(25,211,42,.07); }
+  .phone {
+    position: absolute; right: 96px; top: 48px; width: 300px; height: 510px; border-radius: 40px;
+    background: #121815; border: 2px solid #26302A; box-shadow: 0 30px 80px rgba(0,0,0,.6);
+  }
+  .screen { position: absolute; inset: 16px; border-radius: 28px; background: #F4F7F4; color: #0A0D0B; overflow: hidden; }
+  .bar-top { height: 54px; display: flex; align-items: center; padding: 0 18px; font-weight: 700; font-size: 19px; background: #E4F3E6; }
+  .card { margin: 12px; padding: 10px 14px; border-radius: 16px; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .card .t { font-size: 13px; color: #5B6B5E; }
+  .row { display: flex; justify-content: space-between; font-size: 14px; margin-top: 4px; }
+  .inc { color: #2E7D32; font-weight: 700; } .exp { color: #BA1A1A; font-weight: 700; }
+  .chart { display: flex; align-items: flex-end; gap: 6px; height: 92px; margin-top: 10px; padding-bottom: 4px; border-bottom: 1px solid #DCE5DD; }
+  .g { display: flex; gap: 2px; align-items: flex-end; flex: 1; height: 100%; }
+  .g i { display: block; flex: 1; border-radius: 3px 3px 0 0; }
+  .g i.a { background: #2E7D32; } .g i.b { background: #E5534B; }
+  .months { display: flex; gap: 6px; font-size: 10px; color: #5B6B5E; margin-top: 4px; } .months span { flex: 1; text-align: center; }
+  .meter { display: flex; justify-content: space-between; font-size: 14px; padding: 4px 0; border-bottom: 1px solid #EEF2EE; }
+  .meter:last-child { border-bottom: 0; }
+  .nav { position: absolute; left: 0; right: 0; bottom: 0; height: 52px; background: #E4F3E6; display: flex; justify-content: space-around; align-items: center; font-size: 11px; color: #3B4A3E; }
+  .nav b { color: #0E7F1A; }
+  .brand { position: absolute; left: 80px; bottom: 36px; display: flex; align-items: center; gap: 16px; font-size: 22px; color: #C9D4CB; }
+  .brand strong { color: #fff; font-weight: 700; }
+  .brand .dot { color: #19D32A; }
+  .meta { position: absolute; right: 96px; bottom: 40px; font-size: 18px; color: #8FA394; }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="grid"></div>
+
+  <div class="left">
+    <svg class="icon" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+      <rect width="108" height="108" fill="#2E7D32"/>
+      <g transform="translate(54 54) scale(1.25) translate(-54 -53)">
+        <path d="M38,31 h30 l5,7 h-40 z" fill="#A5D6A7"/>
+        <path d="M36,38 h36 a6,6 0 0 1 6,6 v24 a6,6 0 0 1 -6,6 h-36 a6,6 0 0 1 -6,-6 v-24 a6,6 0 0 1 6,-6 z" fill="#fff"/>
+        <path d="M62,50 h18 v12 h-18 a6,6 0 0 1 0,-12 z" fill="#C8E6C9"/>
+        <path d="M59.5,56 a2.5,2.5 0 1 0 5,0 a2.5,2.5 0 1 0 -5,0 z" fill="#2E7D32"/>
+      </g>
+    </svg>
+    <h1>Мои финансы</h1>
+    <p class="sub">Учёт доходов, расходов и показаний счётчиков.<br>Бесплатное приложение для Android.</p>
+    <div class="chips">
+      <span class="chip">Доходы и расходы</span>
+      <span class="chip">Свои статьи</span>
+      <span class="chip">Графики по месяцам</span>
+      <span class="chip">ГВС · ХВС · свет день/ночь</span>
+      <span class="chip">Резервная копия</span>
+    </div>
+  </div>
+
+  <div class="phone"><div class="screen">
+    <div class="bar-top">Графики</div>
+    <div class="card">
+      <div class="t">Доходы и расходы</div>
+      <div class="chart">
+        <div class="g"><i class="a" style="height:70%"></i><i class="b" style="height:55%"></i></div>
+        <div class="g"><i class="a" style="height:72%"></i><i class="b" style="height:63%"></i></div>
+        <div class="g"><i class="a" style="height:68%"></i><i class="b" style="height:80%"></i></div>
+        <div class="g"><i class="a" style="height:90%"></i><i class="b" style="height:58%"></i></div>
+        <div class="g"><i class="a" style="height:74%"></i><i class="b" style="height:61%"></i></div>
+        <div class="g"><i class="a" style="height:82%"></i><i class="b" style="height:52%"></i></div>
+      </div>
+      <div class="months"><span>май</span><span>июн</span><span>июл</span><span>авг</span><span>сен</span><span>окт</span></div>
+      <div class="row"><span>Доходы</span><span class="inc">95 000,00 ₽</span></div>
+      <div class="row"><span>Расходы</span><span class="exp">61 240,50 ₽</span></div>
+    </div>
+    <div class="card">
+      <div class="t">Счётчики · октябрь</div>
+      <div class="meter"><span>ГВС</span><span>3,2 м³</span></div>
+      <div class="meter"><span>ХВС</span><span>5,8 м³</span></div>
+      <div class="meter"><span>Свет день</span><span>142 кВт·ч</span></div>
+      <div class="meter"><span>Свет ночь</span><span>68 кВт·ч</span></div>
+    </div>
+    <div class="nav"><span>Операции</span><span>Статьи</span><b>Графики</b><span>Счётчики</span></div>
+  </div></div>
+
+  <div class="brand">
+    <svg width="64" height="40" viewBox="1090 80 950 595" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <mask id="cut" maskUnits="userSpaceOnUse" x="1080" y="70" width="980" height="620">
+          <rect x="1080" y="70" width="980" height="620" fill="#fff"/>
+          <path d="M1638 87 H2030 L1938 190 H1670 L1247 665 H1123 Z" fill="#000" stroke="#000" stroke-width="14"/>
+        </mask>
+      </defs>
+      <path d="M1099 87 H1241 L1479 385 H1337 Z" fill="#fff" mask="url(#cut)"/>
+      <path d="M1638 87 H2030 L1938 190 H1670 L1247 665 H1123 Z" fill="#19D32A"/>
+      <path d="M1637 300 H1884 L1804 390 H1557 Z" fill="#19D32A"/>
+    </svg>
+    <span><strong>Web Workshop</strong> <span class="dot">·</span> youfirstsite.ru</span>
+  </div>
+  <div class="meta">Android 8.0+ · автообновление с GitHub</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+.gradle/
+build/
+local.properties
+*.apk
+*.aab
+*.keystore
+.idea/
+.kotlin/
+# Обёртка для сборки на машине автора (пути D:\Tools)
+gw.cmd
